@@ -139,6 +139,10 @@ function(xctest_add_bundle target testee)
         PRIVATE -bundle_loader $<TARGET_FILE:${testee}>)
     endif(XCODE)
 
+  elseif(_testee_type STREQUAL "STATIC_LIBRARY")
+    # testee is a library
+    target_link_libraries(${target} PRIVATE ${testee})
+
   else()
     message(FATAL_ERROR "Testee ${testee} is of unsupported type.")
   endif()
