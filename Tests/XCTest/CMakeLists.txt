@@ -60,7 +60,7 @@ xctest_add_test(XCTest.CocoaExample CocoaExampleTests)
 
 add_library(StaticLibExample STATIC
   StaticLibExample/StaticLibExample.h
-  StaticLibExample/StaticLibExample.m
+  StaticLibExample/StaticLibExample.c
 )
 
 target_include_directories(StaticLibExample PUBLIC .)
